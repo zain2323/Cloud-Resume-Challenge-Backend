@@ -29,12 +29,11 @@ def increment_counter():
     prev = read()
     status = update(prev+1)
     if status == 200:
-        return read()
+        return prev + 1
     else:
        return -1
         
 def lambda_handler(event, context):
-    # TODO implement
     val = increment_counter()
     response = {
         "count": str(val)
